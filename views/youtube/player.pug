@@ -3,7 +3,8 @@ extends ../index
 block player
   div(id='youtube-player')
     div(class='video-container')
+       iframe(width='100%' height='100%' src='https://www.youtube.com/embed/' + videoId + '?autoplay=1' frameborder='0' allowfullscreen)
 
     div(class='controls')
-      a(class='btn btn-primary', href='/youtube') < Back to Trends
-  script(src='/javascripts/youtube.player.js')
+      a(class='btn btn-primary', href='/youtube?countryCode='+selectedCountry) < Back to Trends
+  //- script(src='/javascripts/youtube.player.js') Script file no longer needed as iframe made inline. In first commit I optimized youtube.player.js, but later commented that code there

@@ -1,7 +1,12 @@
+script
+  include header_dropdown.js
 div(id='page-header')
   nav(class='navbar navbar-default navbar-fixed-top')
     div(class='col-md-3 hidden-md-down')
       img(class='logo', src='/images/logo.svg')
 
     div(class='col-md-6 hidden-md-down note')
-      span Here should be implemented dropdown country select
+      span 
+         select(onchange="onCountryChange(this.options[this.selectedIndex].value)", class="selectpicker",data-show-subtext="true",data-live-search="true",data-size="12", data-width="75%")
+          each country in countryList
+            option(value = country.code, selected= country.code == selectedCountry, data-subtext= country.code) #{country.name}
